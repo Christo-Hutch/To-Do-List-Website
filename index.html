@@ -9,14 +9,12 @@
     </head>
     <body>
         <div class="main-container">
-            <div class="todo-app">
-                <h2>To-Do List</h2>
-                <div class="row">
-                    <input type="text" id="new-item-input" placeholder="What's on your mind?">
-                    <button id="addNewTaskButton">Add</button>
-                    <ul id="taskList"></ul>
-                </div>
-            </div>
+            <h2>To-Do List</h2>
+            <form id="item-form">
+                <input type="text" id="item-input">
+                <button type="submit" id="confirm">Add</button>
+            </form>
+            <ul id="to-do-list"></ul>
         </div>
     </body>
 </html>
