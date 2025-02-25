@@ -40,19 +40,23 @@ const toDoList = document.getElementById('to-do-list');
 function createTaskElement(taskText, completed) {
     const li = document.createElement('li');
     li.classList.toggle('completed', completed);
+    li.className = "item"
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.checked = completed;
+    checkbox.className = "checkbox"
     checkbox.addEventListener('change', function() {
         toggleTaskCompletion(taskText, checkbox.checked);
     });
 
     const span = document.createElement('span');
     span.textContent = taskText;
+    span.className = "text"
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = "Delete";
+    deleteBtn.className = "delbnt"
     deleteBtn.addEventListener('click', function() {
         deleteTask(taskText);
     });

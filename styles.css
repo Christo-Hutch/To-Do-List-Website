@@ -14,3 +14,45 @@ html, body {
     padding: 1rem;
     border-radius: 1rem;
 }
+
+.new-item-form {
+    display: flex;
+    align-items: center;
+}
+
+.new-item-input {
+    width: 100%;
+}
+  
+.delbnt, .addbnt {
+    margin-left: 10px;
+    padding: 3px 10px;
+    border-radius: 20%;
+}
+
+.delbnt:hover, .addbnt:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+ul {
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+}
+  
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+  
+.checkbox {
+    margin-right: 10px;
+}
+  
+.text {
+    flex-grow: 1; 
+    margin-right: 10px;
+    word-wrap: break-word;
+}
