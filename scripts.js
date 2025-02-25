@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', loadTasks);
+document.addEventListener('DOMContentLoaded', loaditems);
 
 const form = document.getElementById('item-form');
 const input = document.getElementById('item-input');
@@ -6,38 +6,38 @@ const input = document.getElementById('item-input');
 // Event listener for form submission
 form.addEventListener('submit', function(event) {
     event.preventDefault();
-    const taskText = input.value.trim();
+    const itemText = input.value.trim();
 
-    if (taskText !== "") {
-        addTaskToLocalStorage(taskText);
+    if (itemText !== "") {
+        addItemToLocalStorage(itemText);
         input.value = "";
     }
 });
 
-// Function to load tasks from localStorage
-function loadTasks() {
-    const tasks = JSON.parse(localStorage.getItem('todos')) || [];
-    tasks.forEach(task => {
-        createTaskElement(task.text, task.completed);
+// Function to load items from localStorage
+function loaditems() {
+    const items = JSON.parse(localStorage.getItem('todos')) || [];
+    items.forEach(item => {
+        createItemElement(item.text, item.completed);
     });
 }
 
-// Function to add a task to localStorage and render it
-function addTaskToLocalStorage(taskText) {
-    const tasks = JSON.parse(localStorage.getItem('todos')) || [];
-    const newTask = {text: taskText, completed: false};
+// Function to add an item to localStorage and render it
+function addItemToLocalStorage(itemText) {
+    const items = JSON.parse(localStorage.getItem('todos')) || [];
+    const newitem = {text: itemText, completed: false};
     
-    tasks.push(newTask);
+    items.push(newitem);
     
-    localStorage.setItem('todos', JSON.stringify(tasks));
+    localStorage.setItem('todos', JSON.stringify(items));
     
-    createTaskElement(newTask.text, newTask.completed);
+    createItemElement(newitem.text, newitem.completed);
 }
 
 const toDoList = document.getElementById('to-do-list');
 
-// Function to create a task element
-function createTaskElement(taskText, completed) {
+// Function to create an item element
+function createItemElement(itemText, completed) {
     const li = document.createElement('li');
     li.classList.toggle('completed', completed);
     li.className = "item"
@@ -47,18 +47,18 @@ function createTaskElement(taskText, completed) {
     checkbox.checked = completed;
     checkbox.className = "checkbox"
     checkbox.addEventListener('change', function() {
-        toggleTaskCompletion(taskText, checkbox.checked);
+        toggleItemCompletion(itemText, checkbox.checked);
     });
 
     const span = document.createElement('span');
-    span.textContent = taskText;
+    span.textContent = itemText;
     span.className = "text"
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = "Delete";
     deleteBtn.className = "delbnt"
     deleteBtn.addEventListener('click', function() {
-        deleteTask(taskText);
+        deleteitem(itemText);
     });
 
     li.appendChild(checkbox);
@@ -68,27 +68,27 @@ function createTaskElement(taskText, completed) {
     toDoList.appendChild(li);
 }
 
-// Function to toggle a task's completion status
-function toggleTaskCompletion(taskText, isCompleted) {
-    const tasks = JSON.parse(localStorage.getItem('todos')) || [];
-    const task = tasks.find(task => task.text === taskText);
-    if (task) {
-        task.completed = isCompleted;
-        localStorage.setItem('todos', JSON.stringify(tasks));
+// Function to toggle a item's completion status
+function toggleItemCompletion(itemText, isCompleted) {
+    const items = JSON.parse(localStorage.getItem('todos')) || [];
+    const item = items.find(item => item.text === itemText);
+    if (item) {
+        item.completed = isCompleted;
+        localStorage.setItem('todos', JSON.stringify(items));
         refreshList();
     }
 }
 
-// Function to delete a task
-function deleteTask(taskText) {
-    const tasks = JSON.parse(localStorage.getItem('todos')) || [];
-    const updatedTasks = tasks.filter(task => task.text !== taskText);
-    localStorage.setItem('todos', JSON.stringify(updatedTasks));
+// Function to delete a item
+function deleteitem(itemText) {
+    const items = JSON.parse(localStorage.getItem('todos')) || [];
+    const updateditems = items.filter(item => item.text !== itemText);
+    localStorage.setItem('todos', JSON.stringify(updateditems));
     refreshList();
 }
 
-// Function to refresh the UI based on current tasks in localStorage
+// Function to refresh the UI
 function refreshList() {
     toDoList.innerHTML = '';
-    loadTasks();
+    loaditems();
 }
