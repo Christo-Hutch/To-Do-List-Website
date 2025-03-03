@@ -56,3 +56,8 @@ ul {
     margin-right: 10px;
     word-wrap: break-word;
 }
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
