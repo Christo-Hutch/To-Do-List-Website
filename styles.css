@@ -1,14 +1,15 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: darkcyan;
+    background: linear-gradient(to bottom right, black, grey);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .main-container {
-    background-color: antiquewhite;
+    background:-moz-radial-gradient(rgb(255, 255, 225), rgb(255, 255, 150));
     width: 50%;
     max-width: 500px;
     padding: 1rem;
@@ -55,6 +56,7 @@ ul {
     flex-grow: 1; 
     margin-right: 10px;
     word-wrap: break-word;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .completed {
