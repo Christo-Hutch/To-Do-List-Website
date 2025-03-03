@@ -47,6 +47,7 @@ function createItemElement(itemText, completed) {
     checkbox.checked = completed;
     checkbox.className = "checkbox"
     checkbox.addEventListener('change', function() {
+        li.classList.toggle('completed', checkbox.checked);
         toggleItemCompletion(itemText, checkbox.checked);
     });
 
