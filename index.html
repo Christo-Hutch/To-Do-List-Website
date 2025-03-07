@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>To Do List</title>
-        <link rel="stylesheet" href="styles.css" />
-        <script src="scripts.js" defer></script>
-    </head>
-    <body>
-        <div class="main-container">
-            <div class="to-do-list-container">
-                <h2>To-Do List</h2>
-                <form id="item-form" class="new-item-form">
-                    <input type="text" id="item-input" class="new-item-input" placeholder="What's on your mind?">                    <button type="submit" id="confirm" class="addbnt">Add</button>
-                </form>
-                <ul id="to-do-list"></ul>
-            </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="to-do-list-container">
+            <h2>To-Do List</h2>
+            <form id="item-form" class="new-item-form">
+                <input type="text" id="item-input" class="new-item-input" placeholder="What's on your mind?"> <button
+                    type="submit" id="confirm" class="addbnt">Add</button>
+            </form>
+            <ul id="to-do-list"></ul>
         </div>
-    </body>
+        <button id="del-all" class="delallbtn" onclick="delall()">Clear</button>
+    </div>
+</body>
+
 </html>
