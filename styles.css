@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom right, black, grey);
@@ -9,7 +10,7 @@ html, body {
 }
 
 .main-container {
-    background:-moz-radial-gradient(rgb(255, 255, 225), rgb(255, 255, 150));
+    background: -moz-radial-gradient(rgb(255, 255, 225), rgb(255, 255, 150));
     width: 50%;
     max-width: 500px;
     padding: 1rem;
@@ -24,14 +25,22 @@ html, body {
 .new-item-input {
     width: 100%;
 }
-  
-.delbnt, .addbnt {
+
+.delbnt,
+.addbnt {
     margin-left: 10px;
     padding: 3px 10px;
     border-radius: 20%;
 }
 
-.delbnt:hover, .addbnt:hover {
+.delallbtn {
+    padding: 3px 10px;
+    border-radius: 20%;
+}
+
+.delbnt:hover,
+.addbnt:hover,
+.delallbtn:hover {
     color: white;
     background-color: rgba(0, 0, 0, 0.75);
 }
@@ -41,25 +50,32 @@ ul {
     padding: 5px 0;
     margin: 0;
 }
-  
+
 .item {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    font-family: 'Press Start 2P', cursive !important;
+    color:#ffffff;
 }
-  
+
 .checkbox {
     margin-right: 10px;
 }
-  
+
 .text {
-    flex-grow: 1; 
+    flex-grow: 1;
     margin-right: 10px;
     word-wrap: break-word;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .completed {
     text-decoration: line-through;
     color: gray;
+}
+
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    color:#ffffff;
 }
