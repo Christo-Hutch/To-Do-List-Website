@@ -93,3 +93,9 @@ function refreshList() {
     toDoList.innerHTML = '';
     loaditems();
 }
+
+// Function to delete all items
+function delall() {
+    document.getElementById("to-do-list").innerHTML = "";
+    localStorage.removeItem('todos');
+}
