@@ -40,7 +40,7 @@ const toDoList = document.getElementById('to-do-list');
 function createItemElement(itemText, completed) {
     const li = document.createElement('li');
     li.classList.toggle('completed', completed);
-    li.className = "item"
+    li.classList.add("item");
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
